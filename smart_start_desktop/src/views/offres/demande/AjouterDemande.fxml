@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="PaneProjet" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="730.0" prefWidth="1092.0" style="-fx-background-color: White;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.offres.demande.AjouterDemandeController">
+   <children>
+      <FontAwesomeIconView glyphName="BRIEFCASE" layoutX="142.0" layoutY="53.0" size="24" wrappingWidth="21.99999326467514" />
+      <Text fx:id="titre" layoutX="173.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nouvelle Demande" wrappingWidth="302.171875">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Text>
+      <Label layoutX="53.0" layoutY="73.0" prefHeight="33.0" prefWidth="57.0" text="Titre">
+         <font>
+            <Font name="Century Gothic" size="13.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="titreDemande" layoutX="288.0" layoutY="77.0" unFocusColor="#979797" />
+      <Label layoutX="53.0" layoutY="114.0" prefHeight="33.0" prefWidth="205.0" text="Periode Realisation Minimal">
+         <font>
+            <Font name="Century Gothic" size="13.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="perRealMin" layoutX="290.0" layoutY="118.0" prefHeight="25.0" prefWidth="40.0" unFocusColor="#00b4f7" />
+      <Label layoutX="55.0" layoutY="159.0" prefHeight="33.0" prefWidth="205.0" text="Periode Realisation Maximal">
+         <font>
+            <Font name="Century Gothic" size="13.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="perRealMax" layoutX="290.0" layoutY="163.0" prefHeight="25.0" prefWidth="40.0" unFocusColor="#00b4f7" />
+      <Label layoutX="53.0" layoutY="221.0" prefHeight="33.0" prefWidth="40.0" text="Cout">
+         <font>
+            <Font name="Century Gothic" size="13.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="coutDemande" layoutX="126.0" layoutY="221.0" prefHeight="33.0" prefWidth="40.0" unFocusColor="#00b4f7" />
+      <Label layoutX="53.0" layoutY="299.0" prefHeight="33.0" prefWidth="80.0" text="Description">
+         <font>
+            <Font name="Century Gothic" size="13.0" />
+         </font>
+      </Label>
+      <JFXTextArea fx:id="descriptionDemande" layoutX="53.0" layoutY="365.0" prefHeight="175.0" prefWidth="496.0" />
+      <JFXButton fx:id="valider" buttonType="RAISED" layoutX="42.0" layoutY="594.0" onAction="#onClickAjouterDemande" prefHeight="33.0" prefWidth="103.0" ripplerFill="#00ff1a" style="-fx-background-color: #5cb85c;" text="Confirmer">
+         <effect>
+            <DropShadow blurType="GAUSSIAN" height="47.69" radius="18.155" spread="0.13" width="26.93" />
+         </effect>
+         <graphic>
+            <FontAwesomeIconView glyphName="CHECK" size="14" wrappingWidth="14.428571701049805" />
+         </graphic></JFXButton>
+      </children>
+</AnchorPane>

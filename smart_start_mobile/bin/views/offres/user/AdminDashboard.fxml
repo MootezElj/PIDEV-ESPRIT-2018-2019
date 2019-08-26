@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane minHeight="720.0" minWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.offres.user.AdminDashboardController">
+    <children>
+        <SplitPane dividerPositions="0.23547400611620795" layoutX="-14.0" layoutY="-12.0" prefHeight="748.0" prefWidth="1310.0" style="-fx-background-color: #eef0f4;" stylesheets="@../s.css">
+            <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="746.0" prefWidth="253.0">
+                    <children>
+                        <Button fx:id="CompBTN" layoutY="57.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#Competance" prefHeight="39.0" prefWidth="150.0" text="Competance" AnchorPane.bottomAnchor="650.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="57.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                        </Button>
+                        <Button fx:id="LangBtn" layoutX="-7.0" layoutY="193.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#Langue" prefHeight="39.0" prefWidth="150.0" text="Langue" AnchorPane.bottomAnchor="600.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="60.0">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="UserBtn" layoutX="-7.0" layoutY="297.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#User" prefHeight="39.0" prefWidth="150.0" text="User" AnchorPane.bottomAnchor="550.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="60.0">
+                            <font>
+                                <Font name="Book Antiqua Bold" size="18.0" />
+                            </font>
+                        </Button>
+                  <Button fx:id="LogoutBtn" layoutX="77.0" layoutY="619.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#handleBtnLogout" prefHeight="39.0" prefWidth="150.0" text="Logout">
+                     <font>
+                        <Font name="Book Antiqua Bold" size="18.0" />
+                     </font>
+                  </Button>
+                  
+                    </children>
+                </AnchorPane>
+                <AnchorPane fx:id="dd" focusTraversable="true" minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #03224c;" />
+            </items>
+        </SplitPane>
+    </children>
+</AnchorPane>

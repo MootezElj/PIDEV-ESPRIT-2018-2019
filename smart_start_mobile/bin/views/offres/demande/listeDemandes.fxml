@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="listeDemandeAnchor" prefHeight="518.0" prefWidth="1183.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.offres.demande.ListeDemandeController">
+   <children>
+      <Text layoutX="497.0" layoutY="29.0" strokeDashOffset="125.0" strokeType="OUTSIDE" strokeWidth="12.0" text="Demandes">
+         <font>
+            <Font name="Bell MT" size="26.0" />
+         </font>
+      </Text>
+      <TableView fx:id="demandeTableView" layoutX="14.0" layoutY="48.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="456.0" prefWidth="1136.0" snapToPixel="false" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="33.0" AnchorPane.topAnchor="48.0">
+        <columns>
+          <TableColumn fx:id="titreDemandeC" prefWidth="107.0" text="Titre" />
+          <TableColumn fx:id="projetDemandeC" prefWidth="125.00003051757812" text="Projet" />
+            <TableColumn fx:id="periodeMinDemandeC" prefWidth="128.0" text="Periode Min" />
+            <TableColumn fx:id="periodeMaxDemandeC" minWidth="0.0" prefWidth="149.0" text="Periode Max" />
+            <TableColumn fx:id="coutDemandeC" prefWidth="107.0" text="Cout" />
+            <TableColumn fx:id="dateDemandeC" prefWidth="173.0" text="date demande" />
+            <TableColumn fx:id="descriptionDemandeC" prefWidth="110.0" text="Description" />
+            <TableColumn fx:id="modifierDemandeC" prefWidth="110.0" text="modifier" />
+            <TableColumn fx:id="supprimerDemandeC" prefWidth="110.0" text="supp" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

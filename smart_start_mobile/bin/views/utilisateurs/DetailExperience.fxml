@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import org.controlsfx.control.Rating?>
+
+<AnchorPane fx:id="UserPane" prefHeight="683.0" prefWidth="1459.0" styleClass="parent" stylesheets="@../ressources/css/stylesheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.utilisateurs.PartageExperience.DetailExperienceController">
+    <children>
+      <AnchorPane maxHeight="720.0" maxWidth="1280.0" minHeight="720.0" minWidth="1280.0" prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <AnchorPane layoutX="22.0" layoutY="112.0" prefHeight="668.0" prefWidth="300.0" style="-fx-background-color: #006999;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="980.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <JFXButton layoutX="21.0" layoutY="139.0" minHeight="50.0" style="-fx-background-color: #007ab2;" text="Mon Profil" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                     <font>
+                        <Font name="Arial Bold" size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="22.0" layoutY="139.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/icons/5.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="150.0" fitWidth="80.0" layoutX="102.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="30.0">
+                     <image>
+                        <Image url="@../img/8.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+        <VBox layoutX="300.0" prefHeight="600.0" prefWidth="724.0">
+            <children>
+                <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="75.0" prefWidth="1168.0" style="-fx-background-color: #fff;">
+                    <effect>
+                        <DropShadow blurType="ONE_PASS_BOX" color="#e8e4e4" height="10.0" radius="4.5" width="10.0" />
+                    </effect>
+                    <children>
+                        <Label fx:id="nomPExp" layoutX="14.0" layoutY="24.0" text="Détail" textFill="#7c8184">
+                            <font>
+                                <Font size="26.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </Pane>
+                <HBox alignment="CENTER">
+                    <children>
+                        <VBox alignment="TOP_CENTER" fillWidth="false" layoutX="260.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="607.0" prefWidth="1168.0" styleClass="card-03" HBox.hgrow="ALWAYS">
+                     <children>
+                        <AnchorPane fx:id="listpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="609.0" prefWidth="1174.0">
+                           <children>
+                              <JFXButton fx:id="addexp" layoutX="655.0" layoutY="453.0" onAction="#showAddPartageExp" prefHeight="27.0" prefWidth="188.0" style="-fx-background-color: linear-gradient(to top, #ff3356, #ff3653, #ff3950, #ff3c4e, #ff3f4b);" text="Partager Votre Experience" />
+                              <ImageView fx:id="imgdetail" fitHeight="170.0" fitWidth="300.0" layoutX="609.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true" />
+                              <Label fx:id="Description" layoutX="196.0" layoutY="62.0" text="Description" />
+                              <Label fx:id="decdetail" layoutX="304.0" layoutY="62.0" prefHeight="17.0" prefWidth="261.0" text="Label" />
+                              <Label layoutX="196.0" layoutY="128.0" text="Evaluation" />
+                              <Rating fx:id="ratdetail" layoutX="305.0" layoutY="121.0" />
+                              <JFXButton fx:id="imgshow" layoutX="460.0" layoutY="452.0" prefHeight="27.0" prefWidth="188.0" style="-fx-background-color: linear-gradient(to top, #ff3356, #ff3653, #ff3950, #ff3c4e, #ff3f4b);" text="Voir Gallery Image" />
+                              <Label layoutX="187.0" layoutY="218.0" text="Ajouter Avis">
+                                 <font>
+                                    <Font name="System Bold" size="29.0" />
+                                 </font>
+                              </Label>
+                              <Rating fx:id="ratingavis" layoutX="297.0" layoutY="317.0" />
+                              <TextArea fx:id="descavis" layoutX="305.0" layoutY="366.0" prefHeight="75.0" prefWidth="320.0" />
+                              <JFXButton fx:id="addavis" layoutX="648.0" layoutY="390.0" onAction="#addAvis" prefHeight="27.0" prefWidth="188.0" style="-fx-background-color: linear-gradient(to top, #ff3356, #ff3653, #ff3950, #ff3c4e, #ff3f4b);" text="Ajouter Avis" />
+                              <Label fx:id="Description1" layoutX="187.0" layoutY="382.0" text="Description" />
+                              <Label layoutX="190.0" layoutY="325.0" text="Evaluation" />
+                              <Label layoutX="188.0" layoutY="282.0" text="Image" />
+                              <JFXButton fx:id="loadimgavis" layoutX="307.0" layoutY="278.0" onAction="#addimage" style="-fx-background-color: linear-gradient(to top, #ff3356, #ff3653, #ff3950, #ff3c4e, #ff3f4b);" text="Choisir l'image" />
+                              <ImageView fx:id="imageaviss" fitHeight="150.0" fitWidth="200.0" layoutX="494.0" layoutY="228.0" pickOnBounds="true" preserveRatio="true" />
+                              <JFXButton fx:id="modifierexp" layoutX="179.0" layoutY="453.0" onAction="#ModifPartageExp" prefHeight="27.0" prefWidth="125.0" style="-fx-background-color: linear-gradient(to top, #ff3356, #ff3653, #ff3950, #ff3c4e, #ff3f4b);" text="Modifier" />
+                              <JFXButton fx:id="suppexp" layoutX="323.0" layoutY="452.0" onAction="#suppPartageExp" prefHeight="27.0" prefWidth="111.0" style="-fx-background-color: linear-gradient(to top, #ff3356, #ff3653, #ff3950, #ff3c4e, #ff3f4b);" text="Supprimer" />
+                              <Label layoutX="40.0" layoutY="8.0" text="Détail">
+                                 <font>
+                                    <Font name="System Bold" size="29.0" />
+                                 </font>
+                              </Label>
+                              <JFXButton fx:id="addavis1" layoutX="625.0" layoutY="205.0" onAction="#sharefb" prefHeight="27.0" prefWidth="188.0" style="-fx-background-color: #3b5998;" text="Paratager Facebook" />
+                           </children>
+                        </AnchorPane>
+                     </children></VBox>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

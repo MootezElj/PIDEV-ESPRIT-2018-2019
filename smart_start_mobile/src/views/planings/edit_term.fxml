@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="rootPane" prefHeight="283.0" prefWidth="350.0" stylesheets="@../style/materialButtonStyle.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.planings.EditTermController">
+   <children>
+      <HBox id="header" prefHeight="35.0" prefWidth="342.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label fx:id="topLabel" prefHeight="25.0" prefWidth="313.0" text="Modifier Date termes">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="10.0" top="5.0" />
+               </HBox.margin>
+               <graphic>
+                  <ImageView fitHeight="18.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/drag_icon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Label>
+            <Label onMouseClicked="#exit" prefHeight="35.0" prefWidth="32.0" />
+            <ImageView fitHeight="28.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/exit_icon.png" />
+               </image>
+            </ImageView>
+         </children>
+      </HBox>
+      <VBox layoutX="32.0" layoutY="40.0" prefHeight="146.0" prefWidth="286.0" spacing="20.0">
+         <children>
+            <HBox prefHeight="50.0" prefWidth="306.0">
+               <children>
+                  <Label prefHeight="33.0" prefWidth="188.0" text="Changer le nom  de terme: ">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <JFXTextField fx:id="termName" focusColor="#4d4d4d" labelFloat="true" prefHeight="40.0" prefWidth="337.0" promptText="nom de terme">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </JFXTextField>
+            <Label prefHeight="33.0" prefWidth="188.0" text="Changer la date debut pour : ">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <HBox prefHeight="41.0" prefWidth="350.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0">
+         <children>
+            <JFXButton onMouseClicked="#update" prefHeight="41.0" prefWidth="186.0" text="Update" textOverrun="CLIP">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </JFXButton>
+            <JFXButton onMouseClicked="#cancel" prefHeight="41.0" prefWidth="165.0" text="Cancel">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </HBox>
+      <JFXDatePicker fx:id="termDatePicker" layoutX="32.0" layoutY="186.0" prefHeight="37.0" prefWidth="217.0" />
+   </children>
+</AnchorPane>

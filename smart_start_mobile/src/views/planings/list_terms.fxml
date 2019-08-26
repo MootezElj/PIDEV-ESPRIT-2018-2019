@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="rootPane" prefHeight="435.0" prefWidth="389.0" stylesheets="@../style/materialButtonStyle.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.planings.ListTermsController">
+   <children>
+      <VBox prefHeight="435.0" prefWidth="389.0">
+         <children>
+            <HBox id="header" prefHeight="35.0" prefWidth="340.0">
+               <children>
+                  <Label fx:id="topLabel" prefHeight="25.0" prefWidth="419.0" text="Termes">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" top="5.0" />
+                     </HBox.margin>
+                     <graphic>
+                        <ImageView fitHeight="18.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/drag_icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Label>
+                  <Label onMouseClicked="#exit" prefHeight="37.0" prefWidth="39.0">
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/exit_icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Label>
+               </children>
+            </HBox>
+            <Label prefHeight="34.0" prefWidth="471.0" text="votre Termes:">
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <TableView fx:id="tableView" prefHeight="257.0" prefWidth="350.0">
+               <columns>
+                  <TableColumn fx:id="termCol" prefWidth="170.0" text="Terme" />
+                  <TableColumn fx:id="dateCol" prefWidth="179.0" text="Date debut" />
+               </columns>
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </VBox.margin>
+               <stylesheets>
+                  <URL value="@../style/tableStyle.css" />
+                  <URL value="@../style/scrollbarStyle.css" />
+               </stylesheets>
+            </TableView>
+            <HBox alignment="CENTER" layoutX="10.0" layoutY="376.0" prefHeight="31.0" prefWidth="459.0" />
+            <HBox alignment="CENTER" prefHeight="31.0" prefWidth="459.0">
+               <children>
+                  <JFXButton alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#addTerm" prefHeight="31.0" prefWidth="114.0" stylesheets="@../style/materialButtonStyle.css" text="Ajouter Terme" />
+                  <JFXButton alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#editTerm" prefHeight="31.0" prefWidth="116.0" stylesheets="@../style/materialButtonStyle.css" text="Modifier Terme">
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin></JFXButton>
+                  <JFXButton alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#deleteTerm" prefHeight="31.0" prefWidth="130.0" stylesheets="@../style/materialButtonStyle.css" text="Supprimer Terme" />
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

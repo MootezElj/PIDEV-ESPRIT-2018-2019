@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="PaneLocaleProjet" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="453.0" prefWidth="1000" style="-fx-background-color: White;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.offres.localeProjet.LocaleProjetController">
+   <children>
+        <Text fx:id="cordZ" layoutX="281.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Position locale" wrappingWidth="302.171875">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Text>
+      <Label layoutX="97.0" layoutY="95.0" prefHeight="33.0" prefWidth="87.0" text="Cordonnées:">
+         <font>
+            <Font name="Century Gothic" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="161.0" layoutY="124.0" prefHeight="33.0" prefWidth="40.0">
+         <font>
+            <Font name="Century Gothic" size="13.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="cordX" layoutX="279.0" layoutY="87.0" unFocusColor="#979797" />
+      <JFXTextField fx:id="cordY" layoutX="288.0" layoutY="145.0" unFocusColor="#b5b5b5" />
+      <Label layoutX="233.0" layoutY="95.0" prefHeight="33.0" prefWidth="28.0" text="(X)">
+         <font>
+            <Font name="Century Gothic" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="233.0" layoutY="154.0" prefHeight="33.0" prefWidth="28.0" text="(Y)">
+         <font>
+            <Font name="Century Gothic" size="13.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="valider" buttonType="RAISED" layoutX="130.0" layoutY="230.0" onAction="#OnClickAjouterLocaleProjet" prefHeight="33.0" prefWidth="103.0" ripplerFill="#00ff1a" style="-fx-background-color: #5cb85c;" text="Confirmer">
+         <effect>
+            <DropShadow blurType="GAUSSIAN" height="47.69" radius="18.155" spread="0.13" width="26.93" />
+         </effect>
+         </JFXButton>
+      </children>
+</AnchorPane>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="659.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.template.TemplateFreelancerController">
+   <children>
+      <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="659.0" prefWidth="1368.0">
+        <items>
+          <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="48.0" prefWidth="1364.0">
+               <children>
+                  <JFXButton layoutX="108.0" layoutY="5.0" onAction="#onGestionOffresBtn" prefHeight="37.0" prefWidth="80.0" style="-fx-background-color: #6ba3ff; -fx-background-radius: 30 0 30 0; -fx-border-radius: 30 0 30 0; -fx-border-width: 1;" text="Offres" />
+                  <JFXButton layoutX="224.0" layoutY="5.0" onAction="#onGestionCalendarBtn" prefHeight="37.0" prefWidth="80.0" style="-fx-background-color: #5193ff; -fx-background-radius: 30 0 30 0; -fx-border-radius: 30 0 30 0; -fx-border-width: 1;" text="Calendrier" />
+                  <JFXButton layoutX="1263.0" layoutY="6.0" onAction="#onGestionProfileBtn" prefHeight="35.0" prefWidth="80.0" style="-fx-background-color: #929daf; -fx-background-radius: 10 10 0 0; -fx-border-radius: 10 10 0 0; -fx-border-width: 1;" text="Profile" />
+                  <JFXButton layoutX="14.0" layoutY="5.0" onAction="#onGestionOutilsBtn" prefHeight="37.0" prefWidth="80.0" style="-fx-background-color: #3c85fc; -fx-background-radius: 30 0 30 0; -fx-border-radius: 30 0 30 0; -fx-border-width: 1;" text="Outils" />
+                  <JFXButton layoutX="998.0" layoutY="5.0" onAction="#onGestionReclamationBtn" prefHeight="37.0" prefWidth="117.0" style="-fx-background-color: #ff9696; -fx-background-radius: 30 30 30 0; -fx-border-radius: 30 30 30 0; -fx-border-width: 1;" text="Reclamation" />
+               </children>
+            </AnchorPane>
+          <AnchorPane fx:id="contentAnchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="659.0" prefWidth="1366.0">
+               <children>
+                  <Text layoutX="14.0" layoutY="658.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="59.13671875" />
+               </children></AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

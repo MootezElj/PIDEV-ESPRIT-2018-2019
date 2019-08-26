@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="projetPublieAnchor" prefHeight="467.0" prefWidth="961.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.offres.projet.ListeOffresController">
+   <children>
+      <Text layoutX="365.0" layoutY="41.0" strokeDashOffset="125.0" strokeType="OUTSIDE" strokeWidth="12.0" text="Projet(s) publié(s)" wrappingWidth="239.51513671875">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Text>
+      <TableView fx:id="offresTableView" layoutX="14.0" layoutY="63.0" prefHeight="368.0" prefWidth="908.0" snapToPixel="false">
+        <columns>
+          <TableColumn fx:id="nomProjetC" prefWidth="75.0" text="Nom" />
+          <TableColumn fx:id="titreProjetC" prefWidth="75.0" text="Titre" />
+            <TableColumn fx:id="dateDebutProjetC" prefWidth="75.0" text="Date Debut" />
+            <TableColumn fx:id="dateFinProjetC" prefWidth="75.0" text="Date Fin" />
+            <TableColumn fx:id="dateCreationProjetC" prefWidth="87.0" text="Date Creation" />
+            <TableColumn fx:id="coutProjetC" minWidth="0.0" prefWidth="82.0" text="cout" />
+            <TableColumn fx:id="descriptionProjetC" prefWidth="383.0" text="Description" />
+            <TableColumn fx:id="voirDemandes" prefWidth="55.0" text="DMDS" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

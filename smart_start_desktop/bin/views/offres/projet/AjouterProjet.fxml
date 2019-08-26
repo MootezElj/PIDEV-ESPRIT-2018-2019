@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="PaneProjet" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000" prefWidth="1000" style="-fx-background-color: White;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.offres.projet.AjouterProjetController">
+   <children>
+      <FontAwesomeIconView glyphName="BRIEFCASE" layoutX="250.0" layoutY="63.0" size="24" wrappingWidth="21.99999326467514" />
+      <Text fx:id="titre" layoutX="281.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nouveau Projet" wrappingWidth="302.171875">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Text>
+      <Label layoutX="161.0" layoutY="83.0" prefHeight="33.0" prefWidth="57.0" text="nom">
+         <font>
+            <Font name="Century Gothic" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="161.0" layoutY="124.0" prefHeight="33.0" prefWidth="40.0" text="Titre">
+         <font>
+            <Font name="Century Gothic" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="160.0" layoutY="170.0" prefHeight="33.0" prefWidth="80.0" text="Date Debut">
+         <font>
+            <Font name="Century Gothic" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="161.0" layoutY="210.0" prefHeight="33.0" prefWidth="57.0" text="Date Fin">
+         <font>
+            <Font name="Century Gothic" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="161.0" layoutY="309.0" prefHeight="33.0" prefWidth="80.0" text="Description">
+         <font>
+            <Font name="Century Gothic" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="161.0" layoutY="260.0" prefHeight="33.0" prefWidth="40.0" text="Cout">
+         <font>
+            <Font name="Century Gothic" size="13.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="nomProjet" layoutX="261.0" layoutY="87.0" unFocusColor="#979797" />
+      <JFXTextField fx:id="titreProjet" layoutX="261.0" layoutY="128.0" unFocusColor="#b5b5b5" />
+      <JFXDatePicker fx:id="dateDebutProjet" layoutX="261.0" layoutY="174.0" />
+      <JFXDatePicker fx:id="dateFinProjet" layoutX="261.0" layoutY="214.0" />
+      <JFXTextArea fx:id="descriptionProjet" layoutX="160.0" layoutY="330.0" prefHeight="175.0" prefWidth="496.0" />
+      <JFXTextField fx:id="coutProjet" layoutX="233.0" layoutY="264.0" prefHeight="25.0" prefWidth="40.0" unFocusColor="#00b4f7" />
+      <JFXButton fx:id="valider" buttonType="RAISED" layoutX="138.0" layoutY="550" onAction="#onClickAjouterProjet" prefHeight="33.0" prefWidth="103.0" ripplerFill="#00ff1a" style="-fx-background-color: #5cb85c;" text="Confirmer">
+         <effect>
+            <DropShadow blurType="GAUSSIAN" height="47.69" radius="18.155" spread="0.13" width="26.93" />
+         </effect>
+         <graphic>
+            <FontAwesomeIconView glyphName="CHECK" size="14" wrappingWidth="14.428571701049805" />
+         </graphic></JFXButton>
+      </children>
+</AnchorPane>

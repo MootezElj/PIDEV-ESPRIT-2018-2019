@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
+
+<AnchorPane fx:id="achorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="133.0" prefWidth="909.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.offres.projet.ProjetTemplateController">
+   <children>
+      <Text fx:id="nomProjet" layoutX="105.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="nomProjet">
+         <font>
+            <Font name="Berlin Sans FB" size="26.0" />
+         </font>
+      </Text>
+      <Text fx:id="coutProjet" fill="#797979" layoutX="122.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Text fx:id="techStringsProjet" layoutX="98.0" layoutY="112.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TechnologiesString" wrappingWidth="201.2568359375">
+         <font>
+            <Font name="Agency FB" size="21.0" />
+         </font>
+      </Text>
+       <TextFlow layoutX="300.0" layoutY="31.0" prefHeight="88.0" prefWidth="340.0" />
+      <Text fx:id="dateProjet" fill="#979797" layoutX="665.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date" wrappingWidth="231.9999893605709">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Text>
+      <JFXButton fx:id="publierBtn" layoutX="750.0" layoutY="66.0" minHeight="-Infinity" onAction="#onPublierProjet" prefHeight="38.0" prefWidth="66.0" style="-fx-background-color: #337ab7;" text="publier">
+         <graphic>
+         </graphic></JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="829.0" layoutY="66.0" minWidth="40.0" onAction="#afficherDemandes" prefHeight="38.0" prefWidth="78.0" style="-fx-background-color: #327f06;" text="Demandes" AnchorPane.rightAnchor="10.0">
+         <graphic>
+         </graphic>
+      </JFXButton>
+      <Rectangle arcHeight="5.0" arcWidth="7.0" fill="#78adae" height="3.0" layoutX="206.0" layoutY="12.0" stroke="TRANSPARENT" strokeType="INSIDE" width="474.0" />
+      <JFXButton layoutX="654.0" layoutY="66.0" minWidth="35.0" onAction="#onAjouterCompetance" prefHeight="38.0" prefWidth="91.0" style="-fx-background-color: #8a2591;" text="Competance">
+     	Competance
+      </JFXButton>
+   </children>
+</AnchorPane>
