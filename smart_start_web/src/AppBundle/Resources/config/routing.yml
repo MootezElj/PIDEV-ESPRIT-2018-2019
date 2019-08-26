@@ -1,0 +1,7 @@
+app_homepage:
+    path:     /calendar
+
+app_home:
+    path:     /
+    defaults: { _controller: AppBundle:Security:Redirect }
+

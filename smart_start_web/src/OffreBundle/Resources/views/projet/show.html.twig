@@ -1,0 +1,44 @@
+{% extends '@Client/base_client.html.twig' %}
+{% block main %}
+
+
+    <div class="card" style="margin: 40px">
+        <h2 class="card-header text text-black">"{{ projet.nomProjet }}" Creé le {{ projet.dateCreation|date('Y-m-d') }} </h2>
+        <span>{% if projet.datePublication!=null %}
+                <h6 class="text text-success">Ce projet a ete publié le: {{ projet.datePublication|date('Y-m-d') }}</h6>
+            {% else %}
+                <h6 class="text text-danger">Ce projet n'est pas encore publié</h6>
+            {% endif %}</span>
+        <div class="card-body">
+            <br>
+            <h3>Titre:</h3>
+            <h4>{{ projet.titreProjet }}</h4>
+            <br>
+            <br>
+            <h3>Date de debut: </h3>
+            <h4>{{ projet.dateDebut|date('Y-m-d') }}</h4>
+            <h3>Date de fin: </h3>
+            <h4>{{ projet.dateFin|date('Y-m-d') }}</h4>
+            <br>
+            {% if projet.dateRealisation!=null %}
+                <h5>Ce projet est terminé le {{ projet.dateRealisation|date('Y-m-d') }}</h5>
+
+            {% else %}
+                <h6>Ce projet n'est pas encore terminé</h6>
+            {% endif %}
+            <br>
+            <h3>Description:</h3>
+            <p>{{ projet.description }}</p>
+        </div>
+
+        <a  class="btn btn-danger" href="{{ path('projet_deletee', { 'id': projet.id }) }}">Supprimer</a>
+        <br>
+        <ul>
+            <li>
+                <a href="{{ path('projet_index') }}"><i class="fa fa-backward"></i> Retour</a>
+            </li>
+        </ul>
+    </div>
+
+
+{% endblock %}

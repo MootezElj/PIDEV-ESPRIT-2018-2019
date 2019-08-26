@@ -1,0 +1,36 @@
+{% extends 'base_back.html.twig' %}
+
+{% block body %}
+    <div>
+        <div style="color: white">
+            <h1>Booking</h1>
+
+            <table>
+                <tbody>
+                <tr>
+                    <th>Id</th>
+                    <td>{{ booking.id }}</td>
+                </tr>
+                <tr>
+                    <th>Beginat</th>
+                    <td>{% if booking.beginAt %}{{ booking.beginAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                </tr>
+                <tr>
+                    <th>Endat</th>
+                    <td>{% if booking.endAt %}{{ booking.endAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                </tr>
+                <tr>
+                    <th>Title</th>
+                    <td>{{ booking.title }}</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <ul>
+                <li>
+                    <a href="{{ path('booking_index') }}">Back to the list</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends 'base_front.html.twig' %}
+{% block body %}
+    <div class="as-mainwrapper">
+        <div class="bg-white">
+            <header id="sticky-header" class="header-area"
+                    style="margin-bottom: 30px;
+                    background: linear-gradient(to bottom, #e0e0e0, #FFFFFF);">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3 col-xs-12">
+                            <div class="logo"><a href="#">
+                                    <p style="display:inline; font-family:Impact, Charcoal, sans-serif ;
+                                        font-size: 28px;color: #2C559E">
+                                        <i class="fas fa-brain fa-lg"></i>Smart</p>
+                                    <p style="display:inline; font-size: 20px;
+                                font-family:'Lucida Console', Monaco, monospace;">Start</p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-9 hidden-sm hidden-xs">
+                            <div class="pull-right">
+                                <nav id="primary-menu">
+                                    <ul class="main-menu text-right">
+                                        <li><a href="{{ path('postedProjectList') }}"><i class="fas fa-briefcase fa-lg"></i> Consulter
+                                                Offres</a>
+                                        </li>
+                                        <li><a href="#"><i class="far fa-address-card fa-lg"></i> Freelancers</a>
+
+                                        </li>
+                                        <ul class="dropdown">
+                                            <li><a href="blog-details.html" target="_blank">Blog Details</a></li>
+                                        </ul>
+                                    </ul>
+                                </nav>
+                                <div class="login-btn pt-36">
+                                    <a class="modal-view button" href="{{ url('fos_user_security_login') }}" data-toggle="modal"
+                                      >Login / S'inscrire</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            {% block main %}
+
+            {% endblock %}
+        </div>
+    </div>
+{% endblock %}

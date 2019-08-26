@@ -1,0 +1,8 @@
+{% extends '@Client/gestion_feedback/listeFeedback.html.twig' %}
+{% block modifier %}
+    <a style="margin-bottom: 10px" class="btn btn-warning" href="{{ path('client_OnModifierFeedback_client',{'id':feedback.id}) }}"><i class="fas fa-edit"></i></a>
+    <a style="margin-bottom: 10px" class="btn btn-danger" onclick="return confirm('Vous ete sur?')" href="{{ path('client_OnSupprimerFeedback_client',{'id':feedback.id}) }}"><i class="fas fa-trash-alt"></i></a>
+{% endblock %}
+
+
+

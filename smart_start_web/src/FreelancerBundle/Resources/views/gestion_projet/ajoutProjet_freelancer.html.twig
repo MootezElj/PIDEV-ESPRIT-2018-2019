@@ -1,0 +1,35 @@
+{% extends '@Freelancer/base_freelancer.html.twig' %}
+{% block main %}
+    <h1>Ajout projet pour le freelancer </h1>
+    <!--Start of Contact Form And info-->
+    <div class="contact-form-and-info">
+        <div class="contact-form white-bg fix pr-125 pl-125 pt-40 pb-35">
+            <form id="contact-form" action="{{ path('freelancer_onAjouteProjet') }}" method="post">
+                <div class="form-group">
+                <div class="col-7 pr-6 mb-15">
+                    <label for="name" class="block ml-20">Nom_Projet</label>
+                    <input type="text" name="_Nom_Projet" id="name" class="pl-20" placeholder="Please enter your name">
+                </div>
+
+                <div class="col-5">
+                    <label for="email" class="block ml-20">Technologie</label>
+                    <input type="text" name="_Technologie" id="email" class="pl-20" placeholder="Please enter your email">
+                </div>
+                <div class="col-5 pl-6 mb-15">
+                    <label for="email" class="block ml-20">Lien_Git</label>
+                    <input type="text" name="_Lien_Git" id="email" class="pl-20" placeholder="Please enter your email">
+                </div>
+                <div class="col-10">
+                    <label for="message" class="block ml-20">Description</label>
+                    <textarea name="_Description" id="message" cols="30" rows="10" placeholder="Please enter your message" ></textarea>
+                </div>
+                <button class="btn btn-primary" " type="submit">Ajouter</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+    <!--End of Contact Form ANd info-->
+{% endblock %}
+
+

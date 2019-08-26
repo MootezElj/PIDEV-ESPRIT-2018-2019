@@ -1,0 +1,70 @@
+client_homepage:
+    path:     /accueil_client
+    defaults: { _controller: ClientBundle:Client:index }
+
+client_profil:
+  path:     /profil_client
+  defaults: { _controller: ClientBundle:Client:profil }
+
+client_ajoutProjet:
+    path:     /AjoutProjet_client
+    defaults: { _controller: ClientBundle:Client:ajoutProjet }
+
+client_listeProjet:
+  path:     /Projets_client
+  defaults: { _controller: ClientBundle:Client:listeProjet }
+
+client_modifierProjet:
+  path:     /ModifierProjet_client
+  defaults: { _controller: ClientBundle:Client:modifierProjet }
+
+client_ajoutOffre:
+  path:     /AjoutOffre_client
+  defaults: { _controller: ClientBundle:Client:ajoutOffre }
+
+client_listeOffre:
+  path:     /Offres_clients
+  defaults: { _controller: ClientBundle:Client:listeOffre }
+
+client_modifierOffre:
+  path:     /ModifierOffre_client
+  defaults: { _controller: ClientBundle:Client:modifierOffre }
+
+client_callendrier:
+  path:     /Callendrier_client
+  defaults: { _controller: ClientBundle:Client:calendrier }
+
+client_notification:
+  path:     /notification_client
+  defaults: { _controller: ClientBundle:Client:notification }
+
+client_ajoutFeedbackForm:
+  path:     /ajoutFeedback_client
+  defaults: { _controller: ClientBundle:Client:ajoutFeedbackForm }
+
+client_ajoutFeedbackValidation:
+  path:     /ajoutFeedbackValidation_client
+  defaults: { _controller: ClientBundle:Client:ajoutFeedbackValidation }
+
+
+client_listeToutFeedback_client:
+  path:     /feedbacks
+  defaults: { _controller: ClientBundle:Client:listeToutFeedback }
+
+client_listeFeedbackClientSpecefique_client:
+  path:     /feedbackClient
+  defaults: { _controller: ClientBundle:Client:listeFeedbackClient }
+
+client_listeMAJFeedback_client:
+  path:     /modifierFeedback
+  defaults: { _controller: ClientBundle:Client:listeFeedbackModifer }
+
+client_OnModifierFeedback_client:
+  path:     /modifierFeedback/{id}
+  defaults: { _controller: ClientBundle:Client:OnModifierFeedback }
+
+client_OnSupprimerFeedback_client:
+  path:     /supprimerFeedback/{id}
+  defaults: { _controller: ClientBundle:Client:OnsupprimerFeedback }
+
+

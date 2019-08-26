@@ -1,0 +1,123 @@
+{% extends '@Client/base_client.html.twig' %}
+{% block main %}
+    <div class="container row" style="background-color:
+    whitesmoke;padding: 20px;margin: 20px; width: 1000px;margin-left: 50px; border: 3px solid #FFFFFF; border-radius: 20px">
+        <div id="flash" role="alert">
+            {{ form_errors(form.nomProjet) }}
+        </div>
+        <h1>Nouveau Projet pour {{ client.FirstName }} {{ client.LastName }}</h1>
+        <br>
+        <div class="well form-horizontal">
+            <fieldset>
+                {{ form_start(form) }}
+
+                <!-- input du nom -->
+                <div class="form-group">
+                    <label for="nomProjet" class="col-md-2 control-label"><h6>Nom du projet</h6></label>
+                    <div class="col-md-10 inputGroupContainer">
+                        <div class="input-group"><span class="input-group-addon">
+                        <i class="fas fa-project-diagram"></i></span>{{ form_widget(form.nomProjet) }}
+                        </div>
+                            <div class="text text-danger">  {{ form_errors(form.nomProjet) }}</div>
+                    </div>
+                </div>
+                <!-- Fin input du nom -->
+
+                <!-- input du Titre du projet -->
+                <div class="form-group">
+                    <label for="nomProjet" class="col-md-2 control-label"><h6>Titre</h6></label>
+                    <div class="col-md-10 inputGroupContainer">
+                        <div class="input-group"><span class="input-group-addon">
+                <i class="fas fa-file-signature"></i></span>{{ form_widget(form.titreProjet) }}</div>
+
+                            <div class="text text-danger">
+                                {{ form_errors(form.titreProjet) }}
+                            </div>
+
+                    </div>
+
+                </div>
+                <!-- Fin input du Titre du projet -->
+
+                <!-- input du date de debut du projet -->
+                <div class="form-group">
+                    <label for="nomProjet" class="col-md-2 control-label"><h6>Date de debut</h6></label>
+                    <div class="col-md-10 inputGroupContainer">
+                        <div class="input-group"><span class="input-group-addon">
+                <i class="far fa-calendar-alt"></i></span> {{ form_widget(form.dateDebut) }}</div>
+
+                            <div class="text text-danger">  {{ form_errors(form.dateDebut) }}</div>
+
+
+                    </div>
+                </div>
+                <!-- Fin input du date de debut du projet -->
+
+
+                <!-- input du date de fin du projet -->
+                <div class="form-group">
+                    <label for="nomProjet" class="col-md-2 control-label"><h6>Date de fin</h6></label>
+                    <div class="col-md-10 inputGroupContainer">
+                        <div class="input-group"><span class="input-group-addon">
+                <i class="far fa-calendar-alt"></i></span> {{ form_widget(form.dateFin) }}</div>
+                            <div class="text text-danger">  {{ form_errors(form.dateFin) }}</div>
+
+                    </div>
+                </div>
+                <!-- Fin input du date de fin du projet -->
+
+                <!-- input du cout du projet -->
+                <div class="form-group">
+                    <label for="nomProjet" class="col-md-2 control-label"><h6>Recompense</h6></label>
+                    <div class="col-md-5 inputGroupContainer">
+                        <div class="input-group"><span class="input-group-addon">
+                <i class="fas fa-dollar-sign col-md-6"></i></span> {{ form_widget(form.cout) }}</div>
+                            <div class="text text-danger">  {{ form_errors(form.cout) }}</div>
+
+
+                    </div>
+                </div>
+                <!-- Fin input du date de fin du projet -->
+
+                <!-- input du date de fin du projet -->
+                <div class="form-group">
+                    <label for="nomProjet" class="col-md-2 control-label"><h6>Description sur le projet</h6></label>
+                    <div class="col-md-10 inputGroupContainer">
+                        <div class="input-group"><span class="input-group-addon">
+                <i class="fas fa-align-justify"></i></span> {{ form_widget(form.description) }}</div>
+                    </div>
+                </div>
+                <!-- Fin input du date de fin du projet -->
+
+                <!-- input des technologies du projet -->
+                <br>
+                <div class="form-group">
+                    <label class="col-md-4 control-label"><h6>Selectionnez des Technologies </h6></label>
+                    <div class="col-md-8 inputGroupContainer">
+                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                            {% for technologie in technologies %}
+                                <label class="btn btn-warning" style="margin-right: 5px;margin-bottom: 5px;
+border-top-left-radius: 10px;border-bottom-right-radius: 30px;">
+                                    <input type="checkbox" autocomplete="off" name="checkedTechs[]"
+                                           value="{{ technologie.id }}"><i
+                                            class="fas fa-plus"></i> {{ technologie.nomTechnologie }}
+                                </label>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                <!-- Fin input des technologies du projet -->
+                <button type="submit" class="btn btn-info ">
+                    <i class="fas fa-plus"></i> Confirmer
+                </button>
+                {{ form_end(form) }}
+            </fieldset>
+        </div>
+        <br>
+        <ul>
+            <li>
+                <a href="{{ path('projet_index') }}">Back to the list</a>
+            </li>
+        </ul>
+    </div>
+{% endblock %}

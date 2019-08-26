@@ -1,0 +1,75 @@
+{% extends 'base_front.html.twig' %}
+{% block body %}
+
+    <!--Main Wrapper Start-->
+    <div class="as-mainwrapper">
+        <!--Bg White Start-->
+        <div class="bg-white">
+            <!--Header Area Start-->
+            <header id="sticky-header" class="header-area"
+                    style="margin-bottom: 30px;
+                    background: linear-gradient(to bottom, #e0e0e0, #FFFFFF);">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3 col-xs-12">
+                            <div class="logo"><a href="{{ url('client_homepage') }}">
+                                    <p style="display:inline; font-family:Impact, Charcoal, sans-serif ;
+                                        font-size: 28px;color: #2C559E">
+                                        <i class="fas fa-brain fa-lg"></i>Smart</p>
+                                    <p style="display:inline; font-size: 20px;
+                                font-family:'Lucida Console', Monaco, monospace;">Start</p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-9 hidden-sm hidden-xs">
+                            <div class="pull-right">
+                                <nav id="primary-menu">
+                                    <ul class="main-menu text-right">
+                                        <li> <a href="{{ path('fos_user_profile_show') }}"><i class="far fa-user"></i>  Profil</a></li>
+                                        <li><a><i class="fas fa-file-archive fa-lg"></i>  Projet</a>
+                                            <ul class="dropdown">
+                                                <li><a href="{{ url('projet_new') }}">Ajouter un projet</a></li>
+                                                <li><a href="{{ url('projet_index') }}">Liste de mes projets</a></li>
+                                                <li><a href="{{ path('postedProjectList') }}">Parcourir les projets</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="{{ url('client_callendrier') }}"><i
+                                                        class="fas fa-calendar-alt fa-lg"></i> Calendrier </a></li>
+
+                                        <li>
+                                            <a style="color: #1b6d85" href="{{ url('client_notification') }}">
+                                                <i class="fa fa-bell fa-lg" aria-hidden="true"></i>(4)
+                                            </a>
+                                            <ul class="dropdown">
+                                                <li><a href="#">Notif 1 </a></li>
+                                                <li><a href="#">
+                                                        Notif 2</a></li>
+                                                <li><a href="#">Notif 3</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </nav>
+                                <div class="login-btn pt-36">
+                                    <a class="modal-view button" href="{{ url('fos_user_security_logout') }}" data-toggle="modal"
+                                       > {{ client.username }} <i class="fa fa-sign-out"></i></a>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- End of Header Area -->
+            {% block main %}
+
+            {% endblock %}
+
+
+        </div>
+        <!--End of Bg White-->
+    </div>
+    <!--End of Main Wrapper Area-->
+
+{% endblock %}

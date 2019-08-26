@@ -1,0 +1,127 @@
+{% extends '@Freelancer/base_freelancer.html.twig' %}
+{% block main %}
+
+    <div class="container row" style="background-color:
+    ghostwhite;padding: 20px;margin: 20px; width: 1000px;margin-left: 50px; border: 3px solid #FFFFFF; border-radius: 20px">
+        {% for message in app.flashes('error') %}
+            <div id="flash" class="alert alert-danger " role="alert">
+                {{ message }} !
+            </div>
+        {% endfor %}
+        <div>
+            <div class="col-md-12" style="margin: 20px;background-color: ghostwhite;border-radius: 20px">
+                <div class="single-job-post col-md-12">
+                    <div class="job-title col-4 ">
+
+                        <div class="fix  ">
+                            <p style="color: black; font-size: 18px; font-style: oblique;">
+                                <i class="fa fa-user"></i> {{ projet.client.firstName }}:
+                                "{{ projet.nomProjet }}"</p>
+                            <h6>"{{ projet.titreProjet }}"</h6>
+                            <h5>${{ projet.cout }}</h5>
+                            <span>{{ projet.dateDebut|date('Y-m-d') }}
+                                |- - > {{ projet.dateFin|date('Y-m-d') }}</span><br>
+                            <br>
+                            {% if (projet.technologies|length) %}
+                                {% for technologie in projet.technologies %}
+                                    <div class="btn btn-default"
+                                         disabled> {{ technologie.nomTechnologie }}       </div>
+                                {% endfor %}
+                            {% else %}
+                                <p>Pas de technologie pour le moment</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="address col-6 " style="border:2px double gray; border-radius: 10px;
+                         ">
+                        <p class="mtb-30 block" style="margin-left: 4px;margin-top: 4px">{{ projet.description }}</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <h1>Nouvelle demande </h1>
+        <br>
+        <div class="well form-horizontal">
+            {{ form_start(form,{'method': 'post'} ) }}
+            <fieldset>
+                <!-- input du nom -->
+                <div class="form-group">
+                    <label for="titre" class="col-md-2 control-label"><h6>Titre</h6></label>
+                    <div class="col-md-10 inputGroupContainer">
+                        <div class="input-group"><span class="input-group-addon">
+                <i class="fa fa-pencil-square-o"></i></span>{{ form_widget(form.titreDemande) }}</div>
+                    </div>
+                </div>
+                <!-- Fin input du nom -->
+
+                <!-- input du Titre du projet -->
+                <div class="form-group">
+                    <label for="nomProjet" class="col-md-2 control-label"><h6>Details</h6></label>
+                    <div class="col-md-10 inputGroupContainer">
+                        <div class="input-group"><span class="input-group-addon">
+                    <i class="fa fa-dedent"></i></span>{{ form_widget(form.descriptionDemande) }}</div>
+                    </div>
+                </div>
+                <!-- Fin input du Titre du projet -->
+
+                <!-- input du date de debut du projet -->
+                <div class="form-group">
+                    <label for="minJour" class="col-md-2 control-label"><h6>Min jour</h6></label>
+                    <div class="col-md-10 inputGroupContainer">
+
+                            <div class="input-group col-md-2" ><span class="input-group-addon">
+                            <i class="fa fa-angle-down"></i></span>
+                                {{ form_widget(form.periodeRealisationMin) }}
+                            </div>
+                    </div>
+                    <!-- Fin input du date de debut du projet -->
+
+
+                    <!-- input du date de fin du projet -->
+                    <div class="form-group" style="position: relative;top: 10px;left: 10px;margin-bottom: 20px">
+                        <label for="maxJour" class="col-md-2 control-label"><h6>Max jour</h6></label>
+                        <div class="col-md-10 inputGroupContainer">
+
+                            <div class="input-group col-md-2" ><span class="input-group-addon">
+                            <i class="fa fa-angle-down"></i></span>
+                                {{ form_widget(form.periodeRealisationMax) }}
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Fin input du date de fin du projet -->
+
+                    <!-- input du cout du projet -->
+                    <div class="form-group">
+                        <label for="nomProjet" class="col-md-2 control-label"><h6>Cout</h6></label>
+                        <div class="col-md-5 inputGroupContainer">
+                            <div class="input-group"><span class="input-group-addon">
+                <i class="fas fa-dollar-sign col-md-6"></i></span> {{ form_widget(form.cout) }}</div>
+                        </div>
+                    </div>
+                    <!-- Fin input du date de fin du projet -->
+
+
+                    <button type="submit" class="btn btn-info ">
+                        <i class="fa fa-check"></i> Confirmer
+                    </button>
+                    {{ form_end(form) }}
+                </div>
+            </fieldset>
+        </div>
+        <br>
+        <ul>
+            <li>
+                <a href="{{ path('projet_index') }}"><i class="fa fa-backward"></i> Retour</a>
+            </li>
+        </ul>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            setTimeout(function () {
+                $('#flash').remove();
+            }, 4000);
+        })
+    </script>
+
+{% endblock %}

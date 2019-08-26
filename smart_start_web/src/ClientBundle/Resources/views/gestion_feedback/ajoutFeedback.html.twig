@@ -1,0 +1,66 @@
+{% extends '@Client/base_client.html.twig' %}
+
+{% block main %}
+    <!--Start of Contact Form And info-->
+<div class="container" style="margin-top: 10px">
+        <div class=" row">
+            <div class="col-md-8">
+            <form {% if isNew==true %} action="{{ path('client_ajoutFeedbackValidation') }}"{% endif %} method="post">
+                <div class="pr-6 mb-15">
+                    <input type="hidden" value="{{ feedback.note }}" name="_note" id="note" class="col-2 white-bg"  >
+                    <h1>Note:</h1>
+                    <a  class="text text-danger"  onclick="decNote()" ><i class="fas fa-minus fa-2x"></i></a>
+                    <a onclick="addNote()" class="text text-success">  <i class="fas fa-plus fa-2x"></i></a>
+                    <h2 style="display: inline-block" id="note2"></h2>
+                    <h2  style="display: inline-block" class="text-primary">/5</h2>
+                    <br>
+
+                </div>
+
+                <div class="col-5 pl-6 mb-15">
+                    <label for="titre"  class="block ml-20">Titre</label>
+                    <input type="text" value="{{ feedback.titre }}" name="_titre" id="titre" class="pl-20" placeholder="Saisir un titre">
+                </div>
+                <div class="col-10">
+                    <label for="message" class="block ml-20">Description</label>
+                    <textarea  name="_description" id="description" cols="30" rows="10" placeholder="Saisir plus d'information" class="mb-10">{{ feedback.description }}</textarea>
+                </div>
+                <div class="col-10 fix">
+                    <button type="submit" class="btn btn-primary">Confirmer </button>
+                </div>
+                <p class="form-messege"></p>
+            </form>
+            </div>
+        </div>
+</div>
+    <!--End of Contact Form ANd info-->
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            var input=document.getElementById("note");
+            var ti=document.getElementById("note2");
+            ti.innerText=input.value;
+        });
+
+        function addNote(){
+            var input=document.getElementById("note");
+            if(input.value<5)
+            input.value=input.value*1+0.5*1;
+            var ti=document.getElementById("note2");
+            ti.innerText=input.value;
+
+        }
+        function decNote(){
+            var input=document.getElementById("note");
+            if(input.value>0.5)
+            input.value-=0.5*1;
+            var ti=document.getElementById("note2");
+            ti.innerText=input.value;
+
+        }
+
+
+
+    </script>
+
+    {% endblock %}

@@ -1,0 +1,31 @@
+{% extends '@Client/base_client.html.twig' %}
+{% block main %}
+    <h1>Technologie</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ technologie.id }}</td>
+            </tr>
+            <tr>
+                <th>Nomtechnologie</th>
+                <td>{{ technologie.nomTechnologie }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('technologie_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('technologie_edit', { 'id': technologie.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

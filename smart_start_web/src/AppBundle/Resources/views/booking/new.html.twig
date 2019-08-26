@@ -1,0 +1,17 @@
+{% extends 'base_back.html.twig' %}
+
+{% block body %}
+    <div style="background-color: #FFFFFF">
+        <div style="margin-left: 20px;padding-top: 10px">
+            <h1 style="color: black;">Ajouter action</h1>
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            {{ form_end(form) }}
+            <ul>
+                <li>
+                    <a href="{{ path('booking_index') }}">Back to the list</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}

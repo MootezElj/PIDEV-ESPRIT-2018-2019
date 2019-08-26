@@ -1,0 +1,62 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8" style="background-color: whitesmoke;padding: 20px;border-radius: 30px;margin-left: 20px;">
+            <p style="color: black; font-size: 36px; font-style: oblique;">
+                <i class="fa fa-user"></i> {{ projet.client.firstName }}:
+                "{{ projet.nomProjet }}"</p>
+            <h3>"{{ projet.titreProjet }}"</h3>
+            <h5>${{ projet.cout }}</h5>
+            <span>{{ projet.dateDebut|date('Y-m-d') }}
+                |- - > {{ projet.dateFin|date('Y-m-d') }}</span><br>
+            <br>
+            {% if (projet.technologies|length) %}
+                {% for technologie in projet.technologies %}
+                    <div class="btn btn-default"
+                         disabled> {{ technologie.nomTechnologie }}       </div>
+                {% endfor %}
+            {% else %}
+                <p>Pas de technologie pour le moment</p>
+            {% endif %}
+        </div>
+        <div class="col-sm-10 col-sm-offset-1" id="logout">
+            <div class="page-header">
+                <h3 class="reviews">Demandes</h3>
+            </div>
+
+            <div class="comment-tabs">
+                <div class="tab-content">
+                    <div class="tab-pane active" id="comments-logout">
+                        <ul class="media-list">
+                            {% for demande in demandes %}
+                                <li class="media" style="margin-left: 10px">
+                                    <a class="pull-left" href="#">
+                                        <img class="media-object img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/dancounsell/128.jpg" alt="profile">
+                                        <div style="position: relative;top: 5px; left:30px">{{ demande.freelancer.firstName }}</div>
+                                    </a>
+                                    <div class="media-body">
+                                        <div class="well well-lg">
+                                            <h4 class="media-heading text-uppercase reviews">{{ demande.titreDemande }}</h4>
+                                            <ul class="media-date text-uppercase reviews list-inline">
+                                                <li class="mm">{{ demande.dateDemande|date('d/m/y') }}</li>
+                                            </ul>
+                                            <p class="media-comment">
+                                                {{ demande.descriptionDemande }}
+                                            </p>
+                                            <a class="text text-info" style="font-size: 30px;"><span class="glyphicon glyphicon-share-alt" ></span> <i class="fa fa-dollar"></i>{{ demande.cout }}  </a>
+                                            dans (
+                                            <a class="text text-success text-uppercase" data-toggle="collapse" style="font-size: 20px" >{{ demande.periodeRealisationMin }} </a>
+                                            <a class="text text-warning btn-circle text-uppercase" style="font-size: 20px;margin-right: 20px"><i class="fa fa-angle-double-right"></i>{{ demande.periodeRealisationMax }}) jours </a>
+                                        </div>
+                                    </div>
+
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

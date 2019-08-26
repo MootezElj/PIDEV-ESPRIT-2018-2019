@@ -1,0 +1,38 @@
+{% extends '@Client/base_client.html.twig' %}
+{% block main %}
+    <h1>Technologies list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nomtechnologie</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for technologie in technologies %}
+            <tr>
+                <td><a href="{{ path('technologie_show', { 'id': technologie.id }) }}">{{ technologie.id }}</a></td>
+                <td>{{ technologie.nomTechnologie }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('technologie_show', { 'id': technologie.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('technologie_edit', { 'id': technologie.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('technologie_new') }}">Create a new technologie</a>
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,70 @@
+{% extends "@FOSUser/layout.html.twig" %}
+{% block title %}
+    Creer un compte
+{% endblock %}
+
+
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        $(function () {
+            $('#toggle-two').bootstrapToggle({
+                on: 'Freelancer',
+                off: 'Client',
+                size: 'normal',
+                onstyle: 'warning',
+                offstyle: 'success',
+                width: 150,
+                height: 20,
+            });
+        })
+
+    </script>
+{% endblock %}
+ {% block fos_user_content %}
+     <div class="container">
+
+     <hr>
+     <div class="card bg-light">
+
+     <article class="card-body mx-auto" style="max-width: 400px;">
+
+     <div style="margin-left:20px; ">
+         <p style="display:inline; font-family:Impact, Charcoal, sans-serif ;
+                                       font-size: 48px;color: #2C559E">
+             <i class="fas fa-brain fa-lg"></i>Smart</p>
+         <p style="display:inline; font-size: 30px;
+                                font-family:'Lucida Console', Monaco, monospace;">Start</p>
+     </div>
+
+     <h5 class="card-title mt-3 text-center">Creez votre premier compte</h5>
+     <p>
+         <a href="" class="btn btn-block btn-twitter"> <i class="fab fa-twitter"></i>   Se connecter via
+             Twitter</a>
+         <a href="" class="btn btn-block btn-facebook"> <i class="fab fa-facebook-f"></i>   Se connecter via
+             facebook</a>
+     </p>
+     <p class="divider-text">
+         {% trans_default_domain 'FOSUserBundle' %}
+
+         {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+         <label for="email"><i class="far fa-envelope"></i> E-mail </label>
+         {{ form_widget(form.email) }}
+         <label for="email">Prenom</label>
+         {{ form_widget(form.FirstName) }}
+         <label for="email">Nom</label>
+         {{ form_widget(form.LastName) }}
+         <label for="email">Nom d'utilisateur</label>
+         {{ form_widget(form.username) }}
+         {{ form_widget(form.plainPassword) }}
+         <label for="role">Je suis un :  </label>
+         <input type="checkbox" id="toggle-two" name="role">
+     <div style="margin-top: 35px">
+     <button class="btn btn-primary btn-block" type="submit" value="{{ 'registration.submit'|trans }}">
+         Register
+     </button>
+ </div>
+     {{ form_end(form) }}
+
+
+ {% endblock %}

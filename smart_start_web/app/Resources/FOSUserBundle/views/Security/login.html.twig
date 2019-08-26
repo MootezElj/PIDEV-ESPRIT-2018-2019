@@ -1,0 +1,11 @@
+{% extends "@FOSUser/layout.html.twig" %}
+{% block title %}
+    Se connecter
+{% endblock %}
+{% block fos_user_content %}
+    <div class="card" style="position: relative;top:30px;padding-bottom: 20px">
+        <div class="card-body">
+            {{ include('@FOSUser/Security/login_content.html.twig') }}
+        </div>
+    </div>
+{% endblock fos_user_content %}

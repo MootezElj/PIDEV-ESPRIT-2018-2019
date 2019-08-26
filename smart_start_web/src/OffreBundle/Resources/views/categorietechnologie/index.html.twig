@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Categorietechnologies list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nomcategorie</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for categorieTechnologie in categorieTechnologies %}
+            <tr>
+                <td><a href="{{ path('categorietechnologie_show', { 'id': categorieTechnologie.id }) }}">{{ categorieTechnologie.id }}</a></td>
+                <td>{{ categorieTechnologie.nomCategorie }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('categorietechnologie_show', { 'id': categorieTechnologie.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('categorietechnologie_edit', { 'id': categorieTechnologie.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('categorietechnologie_new') }}">Create a new categorieTechnologie</a>
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,3 @@
+outil_homepage:
+    path:     /
+    defaults: { _controller: OutilBundle:Default:index }

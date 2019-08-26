@@ -1,0 +1,11 @@
+liste_demandes:
+  path:     /offres/{id}/listeDemandes
+  defaults: { _controller: OffreBundle:FreelancerDemandeProjet:listeDemande }
+
+liste_mesDemandes:
+  path:     /mesDemandes
+  defaults: { _controller: OffreBundle:FreelancerDemandeProjet:mesDemandes }
+
+
+
+

@@ -1,0 +1,39 @@
+{% extends '@Client/base_client.html.twig' %}
+{% block main %}
+    {% if ( client is defined ) %}
+        <h1 style="margin-left: 10px; font-family:Impact, Charcoal, sans-serif " class="text-info">  Liste de feedback de {{ client.nom }}:</h1>
+    {% else %}
+        <h1 style="margin-left: 10px" class=" text-info"> Liste de tout les feedback</h1>
+    {% endif %}
+
+    {% if feedbacks is defined %}
+        <!--Start of Feedback Area-->
+        <div style="margin-top: 20px">
+            <div class="container">
+                <div class="row">
+                    {% for feedback in feedbacks %}
+                        <div style=" margin: 15px; border-radius: 15px;border-color: black;border-style: inset"
+                             class="col-md-7 " >
+                            <h3 style="padding-top: 1px" {% if feedback.note>4 %} class="text-success" {% elseif feedback.note<3 %} class="text-danger" {% else %}
+                                class="text-warning" {% endif %}>“{{ feedback.titre }}”</h3>
+                            <h3 class="text-black">{{ feedback.note }}/5  {% if feedback.note>= 3 %}  <i class="far fa-smile"></i>
+                        {% elseif feedback.note<3 %}  <i class="far fa-frown"></i> {% endif %} </h3>
+                            <div >
+                                <span><i class="fas fa-user"></i> {{ feedback.client.nom }} | </span>
+                                <span><i class="fas fa-calendar-alt"></i>
+                                    {{ feedback.date|date("d/m/Y") }}</span>
+                            </div>
+                            <p style="font-size: 20px; font-family: 'Arial'"
+                               class="text-black mb-21">{{ feedback.description }}</p>
+                            {% block modifier %}
+                            {% endblock %}
+                        </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+
+    {% endif %}
+
+{% endblock %}

@@ -1,0 +1,39 @@
+freelancer_homepage:
+    path:     /accueil_freelancer
+    defaults: { _controller: FreelancerBundle:Freelancer:index }
+
+freelancer_ajoutProjet:
+    path:     /ajoutProjet_freelancer
+    defaults: { _controller: FreelancerBundle:Freelancer:ajoutProjet }
+
+freelancer_onAjouteProjet:
+        path:     /onAjoute_freelancer
+        defaults: { _controller: FreelancerBundle:Freelancer:onAjoute }
+
+freelancer_consulterProjet:
+        path:     /consulterProjet_freelancer
+        defaults: { _controller: FreelancerBundle:Freelancer:consulterProjet }
+
+freelancer_consulterOffre:
+    path:     /consulterOffre_freelancer
+    defaults: { _controller: FreelancerBundle:Freelancer:consulterOffre }
+
+freelancer_consulterDemande:
+    path:     /consulterDemande_freelancer
+    defaults: { _controller: FreelancerBundle:Freelancer:consulterDemande }
+freelancer_profil:
+    path:     /profil_freelancer
+    defaults: { _controller: FreelancerBundle:Freelancer:profil }
+
+
+#Publication page
+
+freelancer_Publication:
+    path:     /Publication_freelancer
+    defaults: { _controller: FreelancerBundle:Publication:showPublication }
+
+
+freelancer_Publication_ajouter:
+    path:     /Publication_freelancer_ajouter
+    defaults: { _controller: FreelancerBundle:Publication:addPublication }
+

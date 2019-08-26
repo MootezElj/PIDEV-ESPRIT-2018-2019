@@ -1,0 +1,63 @@
+{% extends '@Freelancer/base_freelancer.html.twig' %}
+{% block main %}
+<div class="container">
+    {% for message in app.flashes('success') %}
+            <div  id="flash" class="alert alert-success " role="alert">
+                {{ message }} !
+            </div>
+    {% endfor %}
+    <h1>Demande</h1>
+
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th>Titredemande</th>
+            <th>Periode realisation min</th>
+            <th>Periode realisation max</th>
+            <th>Descriptiondemande</th>
+            <th>valide ?</th>
+            <th>Signalé ?</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th scope="row">{{ freelancerDemandeProjet.id }}</th>
+            <td>{{ freelancerDemandeProjet.titreDemande }}</td>
+            <td>{{ freelancerDemandeProjet.periodeRealisationMin }}</td>
+            <td>{{ freelancerDemandeProjet.periodeRealisationMax }}</td>
+            <td>{{ freelancerDemandeProjet.descriptionDemande }}</td>
+            <td> {% if freelancerDemandeProjet.valide %} Oui {% else %}Non{% endif %}</td>
+            <td>{% if freelancerDemandeProjet.signale %}Oui{% else %}Non{% endif %}</td>
+        </tr>
+
+        </tbody>
+    </table>
+
+
+
+    <ul>
+        <li>
+            <a href="{{ path('postedProjectList') }}">Retour a list</a>
+        </li>
+        <br>
+        <li>
+            <a href="{{ path('freelancerdemandeprojet_edit', { 'id': freelancerDemandeProjet.id }) }}">Modifier</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+
+
+</div>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            setTimeout(function(){
+                $('#flash').remove();
+            }, 4000);
+        })
+    </script>
+{% endblock %}

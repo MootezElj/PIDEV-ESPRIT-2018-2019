@@ -1,0 +1,51 @@
+{% extends '@Client/base_client.html.twig' %}
+{% block main %}
+
+    <div class="job-post-area">
+        <div class="container">
+            {% if ((projets|length) and (projets is defined )) %}
+                <div class="row">
+                    <div class="col-md-12" style="margin: 20px;background-color: whitesmoke;border-radius: 20px">
+                        {% for projet in projets %}
+                            <div class="single-job-post col-md-12">
+                                <div class="job-title col-4 pl-30">
+                                            <span class="pull-left block mtb-17" style="position: relative;
+            top: 15px;">
+                                               <i class="far fa-building fa-3x"></i>
+                                            </span>
+                                    <div class="fix pl-30 mt-29">
+                                        <p style="color: black; font-size: 18px; font-style: oblique;">
+                                            <strong> {{ projet.client.firstName }}</strong>
+                                            a lancé
+                                            <strong>"{{ projet.nomProjet }}"</strong></p>
+                                        <h5>${{ projet.cout }}</h5>
+                                        <span>{{ projet.dateDebut|date('Y-m-d') }}
+                                            |- - > {{ projet.dateFin|date('Y-m-d') }}</span><br>
+                                        {% if (projet.technologies|length) %}
+                                            {% for technologie in projet.technologies %}
+                                                <div class="btn btn-default"
+                                                     disabled> {{ technologie.nomTechnologie }}       </div>
+                                            {% endfor %}
+                                        {% else %}
+                                            <p>Pas de technologie pour le moment</p>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <div class="address col-4 pl-50">
+                                    <span class="mtb-30 block">{{ projet.description }}</span>
+                                </div>
+                                <div class="time-payment col-md-2 pl-60 text-center pt-22">
+                                    <a class="btn btn-default" style="margin-top: 4px"
+                                       href="{{ path('liste_demandes', { 'id': projet.id }) }}" >
+                                        <i class="far fa-list-alt"></i> Demandes</a>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- End of Job Post Area -->
+{% endblock %}
